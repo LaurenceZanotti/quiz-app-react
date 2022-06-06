@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom';
 
 function ModalWindow() {
     const [show, setShow] = useState(true)
     
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false)
+    };
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -14,12 +17,11 @@ function ModalWindow() {
             </Modal.Header>
             <Modal.Body>This quiz is about front-end technologies. Let's see if you've been practicing!</Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    About
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Start
-                </Button>
+                <Link to="/quiz">
+                    <Button variant="primary">
+                        Start
+                    </Button>
+                </Link>
             </Modal.Footer>
         </Modal>
     )
