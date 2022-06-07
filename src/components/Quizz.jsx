@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { Outlet, useParams} from "react-router-dom"
-import './Quiz.css'
+import './Quizz.css'
 
-function Quiz() {
+function Quizz() {
     let params = useParams()
     
     const [state, setState] = useState({
@@ -81,4 +81,4 @@ function Quiz() {
     )
 }
 
-export default Quiz
+export default Quizz

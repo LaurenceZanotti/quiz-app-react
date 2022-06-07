@@ -1,7 +1,7 @@
 import Modal from "./components/ModalWindow"
 import { Routes, Route } from "react-router-dom"
 import "./App.css"
-import Quiz from "./components/Quiz"
+import Quizz from "./components/Quizz"
 import Question from "./components/Question"
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Modal />} />
 				<Route path="/start" element={<Modal />} />
-				<Route path="/quiz" element={<Quiz />}>
+				<Route path="/quizz" element={<Quizz />}>
 					<Route path=":questionIndex" element={<Question />} />
 				</Route>
 				<Route
