@@ -12,16 +12,24 @@ function Question(props) {
         alternatives: [],
         correct_answer: ''
     })
+    const [form, setForm] = useState({value: 0})
 
     // Controle do formulário
-    function handleFormChange(element) {
-        // console.log(element.target.value);
+    function handleFormChange(event) {
+        // Obter id da alternativa
+        const alternative_id = parseInt(event.target.id.replace('default-', ''))
+        setForm(alternative_id)
     }
 
     // Controle do envio do formulário
-    function handleSubmit(element) {
-        element.preventDefault()
-        // console.log(element);
+    function handleSubmit(event) {
+        event.preventDefault()
+        const selected_question = question.alternatives[form]
+        if (selected_question == question.correct_answer) {
+            console.log( selected_question, 'is correct');
+        } else {
+            console.log(selected_question, 'is incorrect');
+        }
     }
 
     // Ao obter questões, renderizar uma questão por vez
@@ -44,7 +52,7 @@ function Question(props) {
 
     return (
         <div id="question">
-            <Form>
+            <Form >
             <fieldset>
                 <legend>{question.question}</legend>
                 {question.alternatives.map((element, index) => (

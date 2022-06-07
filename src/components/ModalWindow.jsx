@@ -17,7 +17,7 @@ function ModalWindow() {
             </Modal.Header>
             <Modal.Body>This quiz is about front-end technologies. Let's see if you've been practicing!</Modal.Body>
             <Modal.Footer>
-                <Link to="/quiz">
+                <Link to="/quiz/0">
                     <Button variant="primary">
                         Start
                     </Button>
